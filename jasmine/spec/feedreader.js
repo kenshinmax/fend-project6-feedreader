@@ -21,17 +21,19 @@ $(function() {
         });
       
         it('url are defined', function() {
-            for(feed in allFeeds){
-                expect(allFeeds[feed].url).toBeDefined();    
-                expect(allFeeds[feed].url).not.toBeNull();
-            }
+            allFeeds.forEach(function(feed) {
+                expect(feed.url).toBeDefined();    
+                expect(feed.url).not.toBeNull();
+                expect(feed.url).toBeTruthy();  
+            });
+            
         });
         
         it('name are defined', function() {
-            for(feed in allFeeds){
-                expect(allFeeds[feed].name).toBeDefined();    
-                expect(allFeeds[feed].name).not.toBeNull();
-            }
+            allFeeds.forEach(function(feed) {
+                expect(feed.name).toBeDefined();    
+                expect(feed.name).not.toBeNull();
+            });
         });
 
     });
