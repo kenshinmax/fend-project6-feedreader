@@ -33,6 +33,7 @@ $(function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();    
                 expect(feed.name).not.toBeNull();
+                expect(feed.name).toBeTruthy();
             });
         });
 
@@ -67,7 +68,7 @@ $(function() {
         });
 
         it('loadFeed Entries ', function(done) {
-            expect($('.feed').children().length).not.toBe(0);
+            expect($('.feed .entry').children().length).not.toBe(0);
             done();
         });
     });
