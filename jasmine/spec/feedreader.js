@@ -41,9 +41,9 @@ $(function() {
     
   
     describe('The menu', function() {
-        var docBody = $('body');
-        var menuIcon = $('.menu-icon-link');
-        var $menu = $('.menu');
+        var docBody = $('body'),
+            menuIcon = $('.menu-icon-link'),
+            $menu = $('.menu');
         
         // Confirm that the menu is initially hidden
         it('hidden by default', function() {
@@ -62,20 +62,20 @@ $(function() {
 
     });
 
-   describe('Initial Entries', function() {
+    describe('Initial Entries', function() {
         beforeEach(function(done){
-          loadFeed(0,done);
+            loadFeed(0,done);
         });
 
         it('loadFeed Entries ', function(done) {
             expect($('.feed .entry').children().length).not.toBe(0);
+            expect($('.feed .entry').children().length).toBeGreaterThan(0);
             done();
         });
     });
 
     describe('New Feed Selection', function() {
-        var feed0,
-            feed1;
+        var feed0;
 
        beforeEach(function(done) {
             loadFeed(1, function() {
